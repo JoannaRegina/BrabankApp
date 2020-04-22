@@ -12,13 +12,12 @@ export default class Tela01 extends Component {
 	}
 
 
-	cadastrar = async e => {
+	cadastrar = ( props ) => {
 		if (!this.validar()) return
+		console.log(this.state)
+		// this.props.navigation('Home', {email :this.state.email})
 
         // const { email, senha } = this.state
-        
-        console.log(this.state)
-
         // this.props.navigation.navigate('Teste02', {
         //     email: this.state.email,
         //     senha: this.state.senha,
@@ -26,64 +25,22 @@ export default class Tela01 extends Component {
 
         // this.props.navigation.navigate('Teste02', {email: this.state.email})
 
-        this.props.navigation.navigate('Home', {
-            screen: 'Home',
-            params: { email: this.state.email },
-          });
+        // this.props.navigation.navigate('Home', {
+        //     screen: 'Home',
+        //     params: { email: this.state.email },
+		//   });
+
+		this.props.navigation.navigate('Home', {
+		screen: 'Tela01',
+		params: { email: this.state.email, senha: this.state.senha },
+		});
+		// this.props.navigation.navigate('Home', {
+		// 	itemId: Math.floor(Math.random() * 100),
+		// 	otherParam: 'anything you want here',
+		// 	params: { email: this.state.email }
+		// });
 
         // this.props.navigation.navigate('Home', {nome: usuario.usuario.nome})
-
-		// const params = {
-		// 	method: 'POST',
-		// 	headers: {
-		// 		'Content-Type': 'application/json'
-		// 	},
-		// 	body: JSON.stringify({
-		// 		email: email,
-		// 		senha: senha,
-		// 		nome: 'Joanna',
-		// 		sexo: 'F',
-		// 		cpf: '123456789',
-		// 		data_nascimento: '1999-04-20',
-		// 		cpf: '45123658792',
-		// 		celular: '11999999999',
-		// 		cep: '06693600',
-		// 		cidade: 'São Paulo',
-		// 		bairro: 'Jardim Patriarca',
-		// 		logradouro: 'Rua João Gomes de Carvalho',
-		// 		uf: 'SP',
-		// 		url_foto: 'https://localhost.com/image.jpg',
-		// 		permissions: 'USER'
-		// 	})
-		// }
-		
-
-		// try {
-		// 	let retorno =  await fetch('http://ec2-18-234-30-170.compute-1.amazonaws.com:3000/usuarios/registrar',params)
-		// 	console.log(JSON.stringify(retorno))
-
-		// 	console.log(retorno)
-
-		// 	// ok: status code =  200 - 299
-		// 	if(!retorno.ok)
-		// 		return Alert.alert('Erro ao cadastrar')
-
-		// 		// .json() captura e tranforma o corpo em json
-
-		// 		const usuario = await retorno.json()
-		// 		console.log(usuario)
-
-		// 	Alert.alert('Cadastrado com Sucesso')
-
-		// 	// ASYNCSTORAGE - armazenador
-		// 	AsyncStorage.setItem( 'token', usuario.token )
-
-			// this.props.navigation.navigate('Home', {nome: usuario.usuario.nome})
-
-		// } catch (e) {
-		// 	console.log(e)
-		// }
-		
 	}
 
 	validar = () => {
@@ -97,6 +54,7 @@ export default class Tela01 extends Component {
 
 
 	render() {
+		
 		return (
 			<View style={styles.container} >
 				<View style={styles.form}>

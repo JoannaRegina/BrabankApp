@@ -12,14 +12,28 @@ export default class Home extends Component {
     //     // const {params} = this.props.navigation.state;
         // email = this.props.navigation.state.email
         // this.senha = params.senha;
-    // }
+	// }
+	
+	// constructor(props) {
+	// 	super(props);
+	// 	const { params } = this.props.navigation.state;
+	// 	var data = params.email;     
+	// 	this.state = {
+	// 	  email : data
+	// 	};
+	//   }
 
+	teste = () => {
+		console.log(this.props.route.params)
+	}
 
 	render() {
-		// const {email} = this.state 
 		return (
 			<View style={styles.container} >
-				<Text>Bem vindo a Home ♥☻♫: {this.email} </Text>
+				<Text>Bem vindo a Home : </Text>
+				<TouchableOpacity onPress={this.teste} >
+					<Text>CLICA AQUI</Text>
+				</TouchableOpacity>
 			</View>
 
 // this.props.navigation.getParam(paramName, defaultValue)
