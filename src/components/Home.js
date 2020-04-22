@@ -27,6 +27,7 @@ export default class Home extends Component {
 		console.log(this.props.route.params)
 	}
 
+	// this.props.navigation.getParam(paramName, defaultValue)
 	render() {
 		return (
 			<View style={styles.container} >
@@ -36,7 +37,7 @@ export default class Home extends Component {
 				</TouchableOpacity>
 			</View>
 
-// this.props.navigation.getParam(paramName, defaultValue)
+
 		)
 	}
 

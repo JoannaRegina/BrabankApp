@@ -34,6 +34,7 @@ export default class Tela01 extends Component {
 		screen: 'Tela01',
 		params: { email: this.state.email, senha: this.state.senha },
 		});
+		
 		// this.props.navigation.navigate('Home', {
 		// 	itemId: Math.floor(Math.random() * 100),
 		// 	otherParam: 'anything you want here',
