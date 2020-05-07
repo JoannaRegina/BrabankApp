@@ -7,6 +7,7 @@ import Tela02 from './Tela02';
 import Login from './Login';
 import Cadastro from './Cadastro';
 import Home from './Home';
+import Tela03 from './Tela03';
 
 
 const Stack = createStackNavigator();
@@ -42,6 +43,12 @@ export default function MyStack() {
 					name = "Home"
 					component = {Home}
 					options = {{title: 'Tela inicial'}}
+				/>
+
+				<Stack.Screen 
+					name = "Tela03"
+					component = {Tela03}
+					options = {{title: 'Tela 03'}}
 				/>
 
 			</Stack.Navigator>

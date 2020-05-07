@@ -29,7 +29,7 @@ export default class Tela01 extends Component {
         //     screen: 'Home',
         //     params: { email: this.state.email },
 		//   });
-
+		// const teste
 		this.props.navigation.navigate('Home', {
 		screen: 'Tela01',
 		params: { email: this.state.email, senha: this.state.senha },

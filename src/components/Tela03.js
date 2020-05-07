@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { StyleSheet, Text, View, TextInput, TouchableOpacity, Alert, Button, AsyncStorage } from 'react-native';
 
-export default class Home extends Component {
+export default class Tela03 extends Component {
 
 	// constructor(props) {
 	// 	super(props)
@@ -19,8 +19,7 @@ export default class Home extends Component {
 		const { params } = this.props.route.params
 		this.state = {
 			email: params.email,
-			senha: params.email,
-			cep: ''
+			senha: params.email
 		}
 	}
 	
@@ -34,18 +33,8 @@ export default class Home extends Component {
 	//   }
 
 	teste = () => {
-		// console.log(this.props.route.params.params.email)
-		console.log(this.state)
-		// this.props.navigation.navigate('Tela03', {email: this.state.email})
-
-		const { email, senha, cep } = this.state
-
-		this.props.navigation.navigate('Tela03', {
-			screen: 'Home',
-			params: { email: email, senha: senha, cep: cep },
-			});
-
-
+		console.log(this.props.route.params.params)
+		// console.log(this.state)
 	}
 
 	// this.props.navigation.getParam(paramName, defaultValue)
@@ -53,7 +42,7 @@ export default class Home extends Component {
 		return (
 			<View style={styles.container} >
 				<Text>Bem vindo a Home : </Text>
-				<TextInput style={styles.input} placeholder="Seu CEP" onChangeText={texto => this.setState({ cep: texto })} />
+				<TextInput style={styles.input} placeholder="Seu e-mail" onChangeText={texto => this.setState({ email: texto })} />
 				<TouchableOpacity onPress={this.teste} >
 					<Text>CLICA AQUI</Text>
 				</TouchableOpacity>
